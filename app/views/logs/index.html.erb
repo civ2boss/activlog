@@ -1,5 +1,5 @@
 <div id="logs">
-  <h1>New log</h1>
+  <h1>OCT Help Desk - Daily Activity Log</h1>
   <!-- <%= link_to 'New log', new_log_path %> -->
   
   <% form_for(@log) do |f| %>
@@ -29,7 +29,7 @@
     </p>
   <% end %>
 
-  <h1>Listing logs</h1>
+  <h1>Recent Visitors</h1>
   
   <table id="recent_logs_by_time" class="log-report">
     <tbody>
@@ -45,12 +45,14 @@
           <%=h log.contact_type %>
         </td>
         <td class="description">
-          <%=h log.description %>
+          <p><%=h log.description %></p>
         </td>
         <td class="table-options">
-          <%= link_to 'Show', log %>
-          <%= link_to 'Edit', edit_log_path(log) %>
-          <%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %>
+          <div>
+            <%= link_to 'Show', log %>
+            <%= link_to 'Edit', edit_log_path(log) %>
+            <%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %>
+          </div>
         </td>
       </tr>
     <% end %>
