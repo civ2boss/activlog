@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  contact_type: MyString
+  help_with: MyString
+  description: MyText
+  social_security: 9.99
+  date_time: 2010-03-11 01:21:14
+
+two:
+  name: MyString
+  contact_type: MyString
+  help_with: MyString
+  description: MyText
+  social_security: 9.99
+  date_time: 2010-03-11 01:21:14

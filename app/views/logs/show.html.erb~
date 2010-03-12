@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @log.name %>
+</p>
+
+<p>
+  <b>Contact type:</b>
+  <%=h @log.contact_type %>
+</p>
+
+<p>
+  <b>Help with:</b>
+  <%=h @log.help_with %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @log.description %>
+</p>
+
+<p>
+  <b>Social security:</b>
+  <%=h @log.social_security %>
+</p>
+
+<p>
+  <b>Date time:</b>
+  <%=h @log.date_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Back', logs_path %>

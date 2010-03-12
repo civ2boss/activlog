@@ -1,0 +1,30 @@
+#logs {
+  width:930px;
+}
+
+form {
+  margin-bottom:2em;
+  overflow:hidden;
+}
+form p {
+  float:left;
+  padding-right:10px;
+}
+form input#log_name {
+  height:20px;
+  width:200px;
+}
+form textarea#log_description {
+  height:20px;
+  width:335px;
+}
+form input#log_social_security {
+  height:20px;
+  width:75px;
+}
+form input#log_submit {
+  margin-top:17px;
+}
+table.log-report {
+  clear:both;
+}
