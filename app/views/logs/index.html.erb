@@ -1,6 +1,5 @@
 <div id="logs">
-	<h1>OCT Help Desk - Daily Activity Log</h1>
-	<!-- <%= link_to 'New log', new_log_path %> -->
+	<h1>OCT Help Desk - Daily Visitor Activity Log</h1>
 
 	<% form_for(@log) do |f| %>
 	  <%= f.error_messages %>
@@ -25,7 +24,7 @@
 	    <%= f.text_field :social_security, :maxlength => 4, :size => 4 %>
 	  </p>
 	  <p>
-	    <%= f.submit 'Create' %>
+	    <%= f.submit 'Sign in' %>
 	  </p>
 	<% end %>
 

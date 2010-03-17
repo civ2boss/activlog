@@ -12,13 +12,19 @@ ul, ol {
 	padding-left:1.5em;
 }
 
+#edit_profile ol,
+#login ol,
 #register ol {
 	list-style:none;
 	padding:0;
 }
+#edit_profile ol li,
+#login ol li,
 #register ol li {
 	padding:0.5em 0;
 }
+#edit_profile ol li label,
+#login ol li label,
 #register ol li label {
 	display:block;
 	float:left;
