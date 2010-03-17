@@ -18,10 +18,6 @@ class LogsController < ApplicationController
 
   def new
     @log = Log.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
   def edit
@@ -33,10 +29,10 @@ class LogsController < ApplicationController
 
     respond_to do |format|
       if @log.save
-        flash[:notice] = 'Log was successfully created.'
-        format.html { redirect_to(@log) }
+        flash[:notice] = 'Welcome to the OCT Help Desk!'
+        format.html { redirect_to root_url }
       else
-        format.html { render :action => "new" }
+        render :action => "new"
       end
     end
   end

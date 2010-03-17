@@ -9,7 +9,10 @@
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<% if flash[:notice] %>
+<div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
 
 <div id="page">
 	<div id="user_nav">
