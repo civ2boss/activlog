@@ -8,7 +8,29 @@ html, body {
   line-height: 1.5;
 }
 
-#logs {
+ul, ol {
+	padding-left:1.5em;
+}
+
+#register ol {
+	list-style:none;
+	padding:0;
+}
+#register ol li {
+	padding:0.5em 0;
+}
+#register ol li label {
+	display:block;
+	float:left;
+	width:185px;
+}
+
+#user_nav {
+	float:right;
+	font-size:0.9em;
+}
+
+#page {
   border-color:#f00;
   border:3px solid rgba(255,0,0,0.5);
   border-radius:1em;
@@ -19,47 +41,47 @@ html, body {
   width:930px;
 }
 
-form {
+#logs form {
   margin-bottom:2em;
   overflow:hidden;
 }
-form p {
+#logs form p {
   float:left;
   padding-right:10px;
 }
-form input#log_name {
+#logs form input#log_name {
   height:20px;
   width:200px;
 }
-form textarea#log_description {
+#logs form textarea#log_description {
   height:20px;
   width:335px;
 }
-form input#log_social_security {
+#logs form input#log_social_security {
   height:20px;
   width:75px;
 }
-form input#log_submit {
+#logs form input#log_submit {
   margin-top:17px;
 }
-table.log-report {
+#logs table.log-report {
   clear:both;
 }
-table td {
+#logs table td {
   border-bottom:1px solid #eee;
   vertical-align:top;
   line-height:20px;
   padding:7px 5px;
 }
-table td.description p {
+#logs table td.description p {
   color:#94978e;
   float:left;
   margin:0 0 0 5px;
   font-size:12px;
 }
-table td.table-options div {
+#logs table td.table-options div {
   visibility:hidden;
 }
-table tr:hover td.table-options div {
+#logs table tr:hover td.table-options div {
   visibility:visible;
 }

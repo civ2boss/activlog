@@ -1,60 +1,61 @@
 <div id="logs">
-  <h1>OCT Help Desk - Daily Activity Log</h1>
-  <!-- <%= link_to 'New log', new_log_path %> -->
-  
-  <% form_for(@log) do |f| %>
-    <%= f.error_messages %>
+	<h1>OCT Help Desk - Daily Activity Log</h1>
+	<!-- <%= link_to 'New log', new_log_path %> -->
 
-    <p>
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-    </p>
-    <p>
-      <%= f.label :contact_type %><br />
-      <%= f.select :contact_type,
-                    Log::CONTACT_TYPES,
-                   :prompt => "Select your status"
-      %>
-    </p>
-    <p>
-      <%= f.label :description %><br />
-      <%= f.text_area :description %>
-    </p>
-    <p>
-      <%= f.label :social_security %><br />
-      <%= f.text_field :social_security, :maxlength => 4, :size => 4 %>
-    </p>
-    <p>
-      <%= f.submit 'Create' %>
-    </p>
-  <% end %>
+	<% form_for(@log) do |f| %>
+	  <%= f.error_messages %>
 
-  <h1>Recent Visitors</h1>
-  
-  <table id="recent_logs_by_time" class="log-report">
-    <tbody>
-    <% @logs.each do |log| %>
-      <tr id="" class="log-entry">
-        <td class="time">
-          <%=h time_ago_in_words(log.updated_at) + ' ago' %>
-        </td>
-        <td class="name">
-          <%=h log.name %>
-        </td>
-        <td class="type">
-          <%=h log.contact_type %>
-        </td>
-        <td class="description">
-          <p><%=h log.description %></p>
-        </td>
-        <td class="table-options">
-          <div>
-            <%= link_to 'Show', log %>
-            <%= link_to 'Edit', edit_log_path(log) %>
-            <%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
+	  <p>
+	    <%= f.label :name %><br />
+	    <%= f.text_field :name %>
+	  </p>
+	  <p>
+	    <%= f.label :contact_type %><br />
+	    <%= f.select :contact_type,
+	                  Log::CONTACT_TYPES,
+	                 :prompt => "Select your status"
+	    %>
+	  </p>
+	  <p>
+	    <%= f.label :description %><br />
+	    <%= f.text_area :description %>
+	  </p>
+	  <p>
+	    <%= f.label :social_security %><br />
+	    <%= f.text_field :social_security, :maxlength => 4, :size => 4 %>
+	  </p>
+	  <p>
+	    <%= f.submit 'Create' %>
+	  </p>
+	<% end %>
+
+	<h1>Recent Visitors</h1>
+
+	<table id="recent_logs_by_time" class="log-report">
+	  <tbody>
+	  <% @logs.each do |log| %>
+	    <tr id="" class="log-entry">
+	      <td class="time">
+	        <%=h time_ago_in_words(log.updated_at) + ' ago' %>
+	      </td>
+	      <td class="name">
+	        <%=h log.name %>
+	      </td>
+	      <td class="type">
+	        <%=h log.contact_type %>
+	      </td>
+	      <td class="description">
+	        <p><%=h log.description %></p>
+	      </td>
+	      <td class="table-options">
+	        <div>
+	          <%= link_to 'Show', log %>
+	          <%= link_to 'Edit', edit_log_path(log) %>
+	          <%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %>
+	        </div>
+	      </td>
+	    </tr>
+	  <% end %>
+	  </tbody>
+	</table>
+</div>
