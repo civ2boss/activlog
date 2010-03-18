@@ -1,19 +1,7 @@
 class LogsController < ApplicationController
   def index
-    @logs = Log.all
+    @logs = Log.all(:order => "updated_at DESC")
     @log = Log.new
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
-  end
-
-  def show
-    @log = Log.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-    end
   end
 
   def new
@@ -25,15 +13,14 @@ class LogsController < ApplicationController
   end
 
   def create
+    @logs = Log.all(:order => "updated_at DESC")
     @log = Log.new(params[:log])
 
-    respond_to do |format|
-      if @log.save
-        flash[:notice] = 'Welcome to the OCT Help Desk!'
-        format.html { redirect_to root_url }
-      else
-        render :action => "new"
-      end
+    if @log.save
+      flash[:notice] = 'Welcome to the OCT Help Desk!'
+      redirect_to root_url
+    else
+      render :action => "index"
     end
   end
 
