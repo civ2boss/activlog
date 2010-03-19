@@ -4,7 +4,7 @@ class Log < ActiveRecord::Base
     [ "Student",      "Student" ],
     [ "Faculty",      "Faculty" ],
     [ "Staff",        "Staff" ],
-    [ "Guest/Other",  "Other"]
+    [ "Guest",        "Guest"]
   ]
   
   validates_presence_of :name, :contact_type, :description, :social_security
