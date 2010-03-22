@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.login 'login', :controller => 'user_sessions', :action => 'new'
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
+  map.admin 'admin', :controller => 'user_sessions', :action => 'admin'
+  map.find_dates 'find_dates', :controller => 'user_sessions', :action => 'find_dates'
   map.resource :user_sessions
 
   # The priority is based upon order of creation: first created -> highest priority.

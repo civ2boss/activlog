@@ -1,0 +1,51 @@
+<div id="find_dates">
+	<% form_tag '/find_dates' do %>
+		<p>
+			<%= label_tag "start_date", "Start Date" %>
+			<%= date_select "find_dates", "start_date", :order => [:month, :day, :year] %>
+		</p>
+		<p>
+			<%= label_tag "end_date", "End Date" %>
+			<%= date_select "find_dates", "end_date", :order => [:month, :day, :year] %>
+		</p>
+		<%= submit_tag "Find" %>
+	<% end %>
+</div>
+
+<div id="recent_visitors">
+  <h1>Recent Visitors</h1>
+
+  <table id="recent_logs_by_time" class="log-report">
+    <tbody>
+      <% @logs.each do |log| %>
+      <tr id="" class="log-entry">
+        <td class="time">
+          <%=h log.updated_at.strftime("%I:%S %p") %>
+        </td>
+        <td class="name">
+          <%=h log.name %>
+        </td>
+        <td class="type">
+          <%=h log.contact_type %>
+        </td>
+        <td class="description">
+          <p><%=h log.description %></p>
+        </td>
+        <% if current_user %>
+        <td class="social-security">
+          <p><%=h log.social_security %></p>
+        </td>
+        <% end %>
+        <td class="table-options">
+          <div>
+          <% if current_user %>
+            <%= link_to 'Edit', edit_log_path(log) %>
+            <%= link_to 'Delete', log, :confirm => 'Are you sure?', :method => :delete %>
+          <% end %>
+          </div>
+        </td>
+      </tr>
+			<% end %>
+    </tbody>
+  </table>
+</div>
