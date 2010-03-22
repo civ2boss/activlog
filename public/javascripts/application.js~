@@ -2,14 +2,33 @@
 // This file is automatically included by javascript_include_tag :defaults
 $(function () {
   
-  if ($(".notice")) {
+  if ($(".notice").length != 0) {
     setTimeout(function () {
       $(".notice").fadeOut(2000);
     }, 3000);
   };
   
-  if ($(".errorExplanation")) {
-    $("#welcome").css("visibility", "hidden");
+  if ($(".errorExplanation").length != 0) {
+    $("#welcome").animate({
+      opacity: 0
+    }, 0);
   }
+  
+  setTimeout(function () {
+    $(".errorExplanation").fadeOut(2000);
+    $("#welcome").animate({
+        opacity: 1
+      }, 2000);
+  }, 30000);
+  
+  //$('input.radio').css('display','none');
+  /*$('span').bind('change', function() {
+    $('span').removeClass("active", $(this).find(":checked").length? false : true);
+    $(this).addClass("active", $(this).find(":checked").length? true : false);
+  });
+  
+  if ($('input.radio:checked').length != 0) {
+    $(this).parent('span').addClass('active');
+  };*/
   
 });

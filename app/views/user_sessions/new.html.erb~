@@ -17,5 +17,5 @@
 			</li>
 		</ol>
 	<% end %>
-	<div id="register"><%= link_to "Register", new_user_path %></div>
+	<%= link_to "Register", new_user_path %>
 </div>

@@ -10,7 +10,16 @@ h1 { font-size:2em; }
 .errorExplanation ul { list-style-type:disc; padding-left:1.5em; }
 .errorExplanation ul li { color:#ff0; font-style:normal; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #logs .errorExplanation p { float:none; }
- 
+
+#login { background-color:#d40015; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; margin:100px auto 0; padding:10px; width:300px; }
+#login h1 { color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
+#login label { color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
+#login input[type='text'],
+#login input[type='password'] { background:#a00 url("../images/input-bg.gif") repeat-x top left; border:1px solid #e00000; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; border-width:0 1px 1px 0; color:#fff; margin:0; padding:6px 10px 5px; width:280px; }
+#login #register { text-align:right; }
+#login #register a:link { color:#eed; }
+#login #register a:hover { color:#998; }
+
 #edit_profile ol,
 #login ol,
 #register ol { list-style:none; padding:0; }
@@ -21,7 +30,7 @@ h1 { font-size:2em; }
 #login ol li label,
 #register ol li label { display:block; float:left; width:185px; }
  
-#user_nav { background-color:rgba(255,255,255,0.3); -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; float:right; font-size:0.9em; padding:5px; }
+#user_nav { background-color:rgba(255,255,255,0.3); border-bottom-left-radius:5px; -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; float:right; font-size:0.9em; padding:5px; }
   #user_nav a:link, #user_nav a:visited { color:#eed; }
   #user_nav a:visited, #user_nav a:hover { color:#998; }
  
@@ -35,8 +44,6 @@ margin:1em auto;
 padding:1em;
 width:930px;*/
 }
- 
-#logs {}
 
 #header { background-color:#d40015; color:#fff; margin-bottom:1em }
 #header h1 { background-color:#fff; }
@@ -44,22 +51,20 @@ width:930px;*/
 #signin_wrapper { margin:0 auto; overflow:hidden; padding:1em 0 2em; position:relative; width:930px; }
 #welcome { border-right:1px solid #fff; float:left; margin-top:25px; text-shadow:1px 1px 1px #000; width:319px; }
   #welcome em { background-color:#ff6e75; color:#fff; font-style:normal; padding:3px; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
-#signin { float:left; padding:0 10px; width:580px; }
+#signin { float:left; padding:0 10px; text-shadow:1px 1px 1px #000; width:580px; }
   #signin form { overflow:hidden; }
   #signin form fieldset { float:left; }
   #signin form legend { display:none; }
-  #signin form p { float:left; padding-right:10px; }
+  #signin form p { float:left; }
   #signin form input[type='text'],
   #signin form input[type='password'],
-  #signin form textarea { background:#a00 url("../images/input-bg.gif") repeat-x top left; border:1px solid #e00000; border-width:0 1px 1px 0; color:#fff; margin:0; padding:6px 10px 5px; }
+  #signin form textarea { background:#a00 url("../images/input-bg.gif") repeat-x top left; border:1px solid #e00000; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; border-width:0 1px 1px 0; color:#fff; margin:0; padding:6px 10px 5px; }
   #signin form input .name { float:left; }
   #signin form input#log_name { height:20px; width:218px; }
   #signin form .social_security { clear:left; float:left; }
   #signin form input#log_social_security { height:20px; width:218px; }
   #signin form .contact_type { clear:left; float:left; }
-  #signin form label.radio { background-color:#fff; color:#333; display:block; float:left; font-size:13px; font-weight:bold; padding:6px 10px 5px; }
-  #signin form span.radio:hover label { background-color:#fcc; cursor:pointer; }
-  #signin form span.radio.active label { background-color:#f00; }
+  #signin form label.radio { font-size:0.75em; }
   #signin form .description { float:left; }
   #signin form textarea#log_description { height:75px; width:300px; }
   #signin form fieldset + p { float:right; }
@@ -69,6 +74,6 @@ width:930px;*/
 #recent_visitors h1 { color:#333; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #recent_visitors table.log-report { clear:both; }
 #recent_visitors table td { border-bottom:1px solid #eee; vertical-align:top; line-height:20px; padding:7px 5px; }
-#recent_visitors table td.description p { color:#94978e; float:left; margin:0 0 0 5px; font-size:12px; }
+#recent_visitors table td.description p { color:#94978e; float:left; margin:0 0 0 5px; font-size:0.75em; }
 #recent_visitors table td.table-options div { visibility:hidden; }
 #recent_visitors table tr:hover td.table-options div { visibility:visible; }

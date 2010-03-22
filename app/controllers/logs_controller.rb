@@ -9,6 +9,10 @@ class LogsController < ApplicationController
     end
   end
 
+  def find
+    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
+  end
+
   def new
     @log = Log.new
   end
