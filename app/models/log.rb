@@ -12,6 +12,19 @@ class Log < ActiveRecord::Base
   validates_numericality_of :social_security
   validate :social_security_must_be_four_digits
   
+  # ===============
+  # = CSV support =
+  # ===============
+  comma do  # implicitly named :default
+
+    updated_at "Time"
+    name
+    social_security
+    contact_type
+    description
+
+  end
+  
 protected
   def social_security_must_be_four_digits
     errors.add(:social_security, 'must be the last four digits of your social security number') if social_security.nil? || social_security < 1000

@@ -8,7 +8,7 @@ h1 { font-size:2em; }
 
 .errorExplanation { background-color:#d40015; border:3px solid #fff; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; font-size:0.75em; left:0; padding:0 10px; position:absolute; width:284px; }
 .errorExplanation ul { list-style-type:disc; padding-left:1.5em; }
-.errorExplanation ul li { color:#ff0; font-style:normal; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
+.errorExplanation ul li { color:#ff6e75; font-style:normal; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #logs .errorExplanation p { float:none; }
  
 #edit_profile ol,

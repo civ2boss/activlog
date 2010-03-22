@@ -2,13 +2,13 @@
 // This file is automatically included by javascript_include_tag :defaults
 $(function () {
   
-  if ($(".notice") != null) {
+  if ($(".notice")) {
     setTimeout(function () {
       $(".notice").fadeOut(2000);
     }, 3000);
   };
   
-  if ($(".errorExplanation") != null) {
+  if ($(".errorExplanation")) {
     $("#welcome").css("visibility", "hidden");
   }
   

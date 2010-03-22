@@ -26,9 +26,10 @@
               <% Log::CONTACT_TYPES.each do |type, value| %>
                 <span class="radio">
                 <%= f.radio_button :contact_type, type, "class" => "radio" %>
-                <%= f.label type, type, "class" => "radio", "for" => ("log_" + :contact_type.to_s + "_" + type.downcase) %>
+                <%= f.label type, type, "class" => "radio", "for" => ("log_" + :contact_type.to_s + "_" + type.downcase), "validate" => "required:true" %>
                 </span>
               <% end %>
+              <label class="error">Please select your contact type</label>
             </p>
           </fieldset>
           <fieldset>

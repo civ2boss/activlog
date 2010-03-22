@@ -20,7 +20,7 @@
 		$(function() {
 			$('input.radio').css('display','none');
 			$('span').bind('change', function() {
-				$('span').removeClass("active", $(this).find(":checked").length? false : true);
+				$('span').removeClass("active", $(this).find(":checked").length? true : false);
 				$(this).addClass("active", $(this).find(":checked").length? true : false);
 			});
 		});

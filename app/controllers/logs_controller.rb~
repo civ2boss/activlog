@@ -1,6 +1,6 @@
 class LogsController < ApplicationController
   def index
-    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
+    @logs = Log.all(:conditions => ["created_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
     @log = Log.new
     
     respond_to do |format|
@@ -18,7 +18,7 @@ class LogsController < ApplicationController
   end
 
   def create
-    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
+    @logs = Log.all(:order => "updated_at DESC")
     @log = Log.new(params[:log])
 
     if @log.save
