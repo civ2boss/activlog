@@ -1,15 +1,19 @@
 <div id="find_dates">
-	<% form_tag '/find_dates' do %>
-		<p>
-			<%= label_tag "start_date", "Start Date" %>
-			<%= date_select "find_dates", "start_date", :order => [:month, :day, :year] %>
-		</p>
-		<p>
-			<%= label_tag "end_date", "End Date" %>
-			<%= date_select "find_dates", "end_date", :order => [:month, :day, :year] %>
-		</p>
-		<%= submit_tag "Find" %>
-	<% end %>
+	<div id="header">
+	  <h1><span>Queens College</span></h1>
+	  
+  	<% form_tag '/admin' do %>
+  		<p>
+  			<%= label_tag "start_date", "Start Date" %>
+  			<%= date_select "find_dates", "start_date", :order => [:month, :day, :year] %>
+  		</p>
+  		<p>
+  			<%= label_tag "end_date", "End Date" %>
+  			<%= date_select "find_dates", "end_date", :order => [:month, :day, :year] %>
+  		</p>
+  		<%= submit_tag "Find" %>
+  	<% end %>
+	</div>
 </div>
 
 <h1><% @blank %></h1>

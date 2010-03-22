@@ -21,17 +21,19 @@ class UserSessionsController < ApplicationController
   end
   
   def admin
-    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
-  end
-  
-  def find_dates
-    @start_date = Date::civil(params[:find_dates]['start_date(1i)'].to_i, params[:find_dates]['start_date(2i)'].to_i, params[:find_dates]['start_date(3i)'].to_i)
-    @end_date = Date::civil(params[:find_dates]["end_date(1i)"].to_i, params[:find_dates]["end_date(2i)"].to_i, params[:find_dates]["end_date(3i)"].to_i)
+    if !params[:find_dates].blank?
+      @start_date = Date::civil(params[:find_dates]['start_date(1i)'].to_i, params[:find_dates]['start_date(2i)'].to_i, params[:find_dates]['start_date(3i)'].to_i)
+      @end_date = Date::civil(params[:find_dates]["end_date(1i)"].to_i, params[:find_dates]["end_date(2i)"].to_i, params[:find_dates]["end_date(3i)"].to_i)
+    else
+      @start_date = Date.today
+      @end_date = Date.today+1
+    end
+    
     @logs = Log.all(:conditions => ["updated_at between ? and ?", @start_date, @end_date], :order => "updated_at DESC")
+    
     respond_to do |format|
       format.html { render :action => 'admin' }
       format.csv { render :csv => @logs }
     end
   end
-
 end

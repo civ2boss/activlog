@@ -33,7 +33,7 @@ h1 { font-size:2em; }
 #user_nav { background-color:rgba(255,255,255,0.3); border-bottom-left-radius:5px; -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; float:right; font-size:0.9em; padding:5px; }
   #user_nav a:link, #user_nav a:visited { color:#eed; }
   #user_nav a:visited, #user_nav a:hover { color:#998; }
- 
+
 #page {
 /*  border-color:#f00;
 border:3px solid rgba(255,0,0,0.5);
@@ -45,7 +45,7 @@ padding:1em;
 width:930px;*/
 }
 
-#header { background-color:#d40015; color:#fff; margin-bottom:1em }
+#header { background-color:#d40015; color:#fff; margin-bottom:1em; }
 #header h1 { background-color:#fff; }
 #header h1 span { background: url("../images/qclogo.png") no-repeat 0 0; display:block; height:94px; margin:0 auto; padding-bottom:0.5em; text-indent:-9999px; width:930px; }
 #signin_wrapper { margin:0 auto; overflow:hidden; padding:1em 0 2em; position:relative; width:930px; }
