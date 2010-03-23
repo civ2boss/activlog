@@ -38,7 +38,7 @@ h1 { font-size:2em; }
 #find_dates form { float:left; margin:0 auto; padding:1em 10px; width:580px; }
 #find_dates label { display:block; width:100px; }
 #find_dates select { display:none; }
-#find_dates #find_btn { margin-top:10px; }
+#find_dates #find_btn { padding-top:10px; }
 
 #page {
 /*  border-color:#f00;

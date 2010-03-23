@@ -32,7 +32,7 @@ class UserSessionsController < ApplicationController
     @logs = Log.all(:conditions => ["updated_at between ? and ?", @start_date, @end_date], :order => "updated_at DESC")
     
     respond_to do |format|
-      format.html { render :action => 'admin', :layout => 'admin' }
+      format.html { render :action => 'admin' }
       format.csv { render :csv => @logs }
     end
   end

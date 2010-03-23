@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>QC Help Desk - Daily Log</title>
+	<%= stylesheet_link_tag 'activlog', 'jquery-ui-1.8.custom' %>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<% if protect_against_forgery? %>
+	<script type='text/javascript'>
+	//<![CDATA[
+	  window._auth_token_name = "#{request_forgery_protection_token}";
+	  window._auth_token = "#{form_authenticity_token}";
+	//]]>
+	</script>
+	<% end %>
+	<%= javascript_include_tag 'application', 'jquery-ui-1.8.custom.min' %>
+	<script type="text/javascript">
+		$(function() {
+			$("<input id=\"start_date\" type=\"text\" / >").appendTo($('form p#start'));
+			$('#start_date').datepicker({
+				altField: '#find_dates_start_date_1i', altFormat: 'yyyy',
+				altField: '#find_dates_start_date_2i', altFormat: 'm',
+				altField: '#find_dates_start_date_3i', altFormat: 'd'
+			});
+			$("<input id=\"end_date\" type=\"text\" / >").appendTo($('form p#end'));
+			$('#end_date').datepicker({
+				altField: '#find_dates_end_date_1i', altFormat: 'yyyy',
+				altField: '#find_dates_end_date_2i', altFormat: 'm',
+				altField: '#find_dates_end_date_3i', altFormat: 'd'
+			});
+		});
+	</script>
+</head>
+<body>
+
+<% if flash[:notice] %>
+<div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+
+<div id="page">
+	<div id="user_nav">
+	<% if controller.action_name != 'new' %>
+		<% if current_user %>
+			<%= link_to "Edit profile", edit_user_path(:current) %>
+			<%= link_to "Logout", logout_path %>
+		<% else %>
+			<%= link_to "Log in", login_path %>
+		<% end %>
+	<% end %>
+	</div>
+	
+	<%= yield %>
+</div>
+
+</body>
+</html>

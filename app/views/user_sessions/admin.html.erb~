@@ -17,7 +17,7 @@
 					<%= date_select "find_dates", "end_date", :order => [:month, :day, :year] %>
 				</p>
 				<%= submit_tag "Find", :id => 'find_btn' %>
-				<%= link_to 'Download', '/admin.csv' %>
+				<%= link_to 'Download', '/admin.cvs' %>
 			<% end %>
 		</div>
 	</div>
