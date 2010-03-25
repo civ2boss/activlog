@@ -17,8 +17,6 @@
 					<%= date_select "find_dates", "end_date", :order => [:month, :day, :year] %>
 				</p>
 				<%= submit_tag "Find", :id => 'find_btn' %>
-				<%= link_to 'Download', '/admin.csv' %>
-			<% end %>
 		</div>
 	</div>
 </div>
@@ -27,6 +25,8 @@
 
 <div id="recent_visitors">
   <h1>Recent Visitors</h1>
+	<div class="download_csv"><%= link_to 'Download CSV File', "/admin.csv?start_date=#{@start_date};end_date=#{@end_date}" %>
+<% end %></div>
 
   <table id="recent_logs_by_time" class="log-report">
     <tbody>

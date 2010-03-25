@@ -4,21 +4,30 @@ html, body { font-family:Helvetica, Calibri, Arial, Sans-serif; font-size:medium
 
 h1 { font-size:2em; }
 
-.notice { background-color:rgba(0,255,0,0.5); border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; left:35%; padding:1em 0; position:absolute; text-align:center; top:50%; width:400px; }
+a:link, a:visited { color:#f00; padding:3px; text-decoration:none; }
+a:hover, a:active { background-color:#ff6e75; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 
-.errorExplanation { background-color:#d40015; border:3px solid #fff; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; font-size:0.75em; left:0; padding:0 10px; position:absolute; width:284px; }
+.notice { background-color:rgba(0,255,0,0.5); -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; left:35%; padding:1em 0; position:absolute; text-align:center; top:20px; width:400px; }
+
+.errorExplanation { background-color:#d40015; border:3px solid #fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; font-size:0.75em; left:0; padding:0 10px; position:absolute; width:284px; }
 .errorExplanation ul { list-style-type:disc; padding-left:1.5em; }
 .errorExplanation ul li { color:#ff0; font-style:normal; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #logs .errorExplanation p { float:none; }
 
-#login { background-color:#d40015; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; margin:100px auto 0; padding:10px; width:300px; }
-#login h1 { color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
-#login label { color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
+#login,
+#register { background-color:#d40015; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; margin:100px auto 0; padding:10px; width:300px; }
+#login h1,
+#register h1 { color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
+#login label,
+#register label { color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #login input[type='text'],
-#login input[type='password'] { background:#a00 url("../images/input-bg.gif") repeat-x top left; border:1px solid #e00000; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; border-width:0 1px 1px 0; color:#fff; margin:0; padding:6px 10px 5px; width:280px; }
-#login #register { text-align:right; }
-#login #register a:link { color:#eed; }
-#login #register a:hover { color:#998; }
+#login input[type='password'],
+#register input[type='text'],
+#register input[type='password'] { background:#a00 url("../images/input-bg.gif") repeat-x top left; border:1px solid #e00000; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; border-width:0 1px 1px 0; color:#fff; margin:0; padding:6px 10px 5px; width:280px; }
+#register small { color:#fff; font-size:0.75em; }
+#login .register_link { text-align:right; }
+#login .register_link a:link,
+#login .register_link a:visited { color:#eed; }
 
 #edit_profile ol,
 #login ol,
@@ -30,14 +39,17 @@ h1 { font-size:2em; }
 #login ol li label,
 #register ol li label { display:block; float:left; width:185px; }
  
-#user_nav { background-color:rgba(255,255,255,0.3); border-bottom-left-radius:5px; -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; float:right; font-size:0.9em; padding:5px; }
+#user_nav { background-color:rgba(255,255,255,0.3); -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; border-bottom-left-radius:5px; float:right; font-size:0.9em; padding:5px; }
   #user_nav a:link, #user_nav a:visited { color:#eed; }
-  #user_nav a:visited, #user_nav a:hover { color:#998; }
+  #user_nav a:visited, #user_nav a:hover { background:none; color:#998; text-shadow:none; }
 
-#find_dates #help { border-right:1px solid #fff; float:left; margin-top:25px; text-shadow:1px 1px 1px #000; width:319px; }
-#find_dates form { float:left; margin:0 auto; padding:1em 10px; width:580px; }
-#find_dates label { display:block; width:100px; }
+#find_dates #help { float:left; margin-top:25px; text-shadow:1px 1px 1px #000; width:320px; }
+#find_dates form { border-left:1px solid #fff; float:left; margin:0 auto; padding:1em 10px; width:579px; }
+#find_dates label { display:block; text-shadow:1px 1px 1px #000; width:100px; }
+#find_dates p { float:left; }
+ #find_dates p + p { margin-left:15px; }
 #find_dates select { display:none; }
+
 #find_dates #find_btn { margin-top:10px; }
 
 #page {
@@ -64,7 +76,7 @@ width:930px;*/
   #signin form p { float:left; }
   #signin form input[type='text'],
   #signin form input[type='password'],
-  #signin form textarea { background:#a00 url("../images/input-bg.gif") repeat-x top left; border:none; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; color:#fff; margin:0; padding:6px 10px 5px; }
+  #signin form textarea { background:#a00 url("../images/input-bg.gif") repeat-x top left; border:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; color:#fff; margin:0; padding:6px 10px 5px; }
   #signin form input .name { float:left; }
   #signin form input#log_name { height:20px; width:200px; }
   #signin form .social_security { clear:left; float:left; }
@@ -77,9 +89,10 @@ width:930px;*/
   #signin form input#log_submit { position:relative; right:0; margin-top:10px; }
 
 #recent_visitors { margin:0 auto; width:930px; }
-#recent_visitors h1 { color:#333; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
+#recent_visitors h1 { color:#333; float:left; padding-right:10px; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
+#recent_visitors .download_csv { line-height:2em; padding:8px; }
 #recent_visitors table.log-report { clear:both; }
 #recent_visitors table td { border-bottom:1px solid #eee; vertical-align:top; line-height:20px; padding:7px 5px; }
-#recent_visitors table td.description p { color:#94978e; float:left; margin:0 0 0 5px; font-size:0.75em; }
+#recent_visitors table td.description p { color:#665; float:left; margin:0 0 0 5px; font-size:0.75em; }
 #recent_visitors table td.table-options div { visibility:hidden; }
 #recent_visitors table tr:hover td.table-options div { visibility:visible; }

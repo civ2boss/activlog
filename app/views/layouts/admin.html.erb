@@ -18,13 +18,13 @@
 	<%= javascript_include_tag 'application', 'jquery-ui-1.8.custom.min' %>
 	<script type="text/javascript">
 		$(function() {
-			$("<input id=\"start_date\" type=\"text\" / >").appendTo($('form p#start'));
+			$("<div id=\"start_date\"></div>").appendTo($('form p#start'));
 			$('#start_date').datepicker({
 				altField: '#find_dates_start_date_1i', altFormat: 'yyyy',
 				altField: '#find_dates_start_date_2i', altFormat: 'm',
 				altField: '#find_dates_start_date_3i', altFormat: 'd'
 			});
-			$("<input id=\"end_date\" type=\"text\" / >").appendTo($('form p#end'));
+			$("<div id=\"end_date\"></div>").appendTo($('form p#end'));
 			$('#end_date').datepicker({
 				altField: '#find_dates_end_date_1i', altFormat: 'yyyy',
 				altField: '#find_dates_end_date_2i', altFormat: 'm',
