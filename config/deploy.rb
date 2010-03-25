@@ -2,14 +2,16 @@ set :application, "QC Daily Visitor's Log"
 set :repository,  "git@github.com:civ2boss/activlog.git"
 
 set :scm, :git
+set :user, "rting"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "localhost"                          # Your HTTP server, Apache/etc
-role :app, "localhost"                          # This may be the same as your `Web` server
-role :db,  "localhost", :primary => true # This is where Rails migrations will run
+role :web, "activlog.local"                          # Your HTTP server, Apache/etc
+role :app, "activlog.local"                          # This may be the same as your `Web` server
+role :db,  "activlog.local", :primary => true # This is where Rails migrations will run
 # role :db,  "your slave db-server here"
 
 default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
 set :branch, "master"
 set :deploy_to, "/Users/rting/code/activlog_deploy"
 set :deploy_via, :remote_cache

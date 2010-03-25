@@ -1,4 +1,7 @@
 class LogsController < ApplicationController
+  load_and_authorize_resource
+  before_filter :require_user, :only => [:edit, :update, :destroy, :admin]
+  
   def index
     @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
     @log = Log.new
@@ -7,10 +10,6 @@ class LogsController < ApplicationController
       format.html
       format.csv { render :csv => @logs }
     end
-  end
-
-  def find
-    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
   end
 
   def new
@@ -22,8 +21,8 @@ class LogsController < ApplicationController
   end
 
   def create
-    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
     @log = Log.new(params[:log])
+    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
 
     if @log.save
       flash[:notice] = 'Welcome to the OCT Help Desk!'
@@ -54,4 +53,33 @@ class LogsController < ApplicationController
       format.html { redirect_to(logs_url) }
     end
   end
+  
+  def admin
+    if !params[:find_dates].blank?
+      @start_date = valid_date(:find_dates,'start_date')
+      @end_date = valid_date(:find_dates,'end_date')
+    else
+      if params[:start_date].blank?
+        @start_date = Date.today
+        @end_date = Date.today+1
+      else
+        @start_date = params[:start_date]
+        @end_date = params[:end_date]
+      end
+    end
+
+    @logs = Log.all(:conditions => ["updated_at between ? and ?", @start_date, @end_date], :order => "updated_at DESC")
+
+    respond_to do |format|
+      format.html { render :action => 'admin', :layout => 'admin' }
+      format.csv { render :csv => @logs }
+    end
+  end
+
+  private
+    def valid_date(object,attribute)
+      Date::civil(params[object][attribute + '(1i)'].to_i,   
+                  params[object][attribute + '(2i)'].to_i, 
+                  params[object][attribute + '(3i)'].to_i)
+    end
 end

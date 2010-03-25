@@ -7,7 +7,7 @@ h1 { font-size:2em; }
 a:link, a:visited { color:#f00; padding:3px; text-decoration:none; }
 a:hover, a:active { background-color:#ff6e75; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 
-.notice { background-color:rgba(0,255,0,0.5); -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; left:35%; padding:1em 0; position:absolute; text-align:center; top:20px; width:400px; }
+.notice { background-color:rgba(0,255,0,0.5); -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; left:50%; margin-left:-200px; padding:1em 0; position:absolute; text-align:center; top:20px; width:400px; }
 
 .errorExplanation { background-color:#d40015; border:3px solid #fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; font-size:0.75em; left:0; padding:0 10px; position:absolute; width:284px; }
 .errorExplanation ul { list-style-type:disc; padding-left:1.5em; }
