@@ -83,7 +83,8 @@ width:930px;*/
   #signin form input#log_social_security { height:20px; width:200px; }
   #signin form .contact_type { clear:left; float:left; }
   #signin form label.radio { font-size:0.75em; }
-  #signin form .description { float:left; }
+  #signin form .category,
+  #signin form .description { float:none; }
   #signin form textarea#log_description { height:75px; width:300px; }
   #signin form fieldset + p { float:right; }
   #signin form input#log_submit { position:relative; right:0; margin-top:10px; }

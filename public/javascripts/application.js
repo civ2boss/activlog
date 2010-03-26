@@ -21,4 +21,17 @@ $(function () {
       }, 2000);
   }, 30000);
   
+  $("#signin form").validate({
+    debug: true,
+    rules: {
+      "log[name]": {required: true},
+      "log[social_security]": {required: true, minlength: 4, maxlength: 4},
+      "log[contact_type]": {required: true},
+      "log[category]": {required: true},
+      "log[description]": {required: function (element) {
+                            return $("select#log_category").val() == "Other";
+                          }}
+    }
+  })
+  
 });

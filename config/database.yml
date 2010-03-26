@@ -16,7 +16,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: msql
+  adapter: mysql
   database: activlog_production
   username: root
   password: 
