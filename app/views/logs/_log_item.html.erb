@@ -1,0 +1,33 @@
+<tr id="" class="log-entry">
+  <td class="time">
+    <%=h log_item.updated_at.strftime("%I:%S %p") %>
+  </td>
+  <td class="name">
+    <%=h log_item.name %>
+  </td>
+  <td class="type">
+    <%=h log_item.contact_type %>
+  </td>
+	<td class="category">
+		<%=h log_item.category %>
+	</td>
+  <td class="description">
+    <p><%=h log_item.description %></p>
+  </td>
+  <% if current_user %>
+  <td class="social-security">
+    <p><%=h log_item.social_security %></p>
+  </td>
+  <% end %>
+	<td class="serviced">
+		
+	</td>
+  <td class="table-options">
+    <div>
+    <% if current_user %>
+      <%= link_to 'Edit', edit_log_path(log) %>
+      <%= link_to 'Delete', log_item, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
+    </div>
+  </td>
+</tr>

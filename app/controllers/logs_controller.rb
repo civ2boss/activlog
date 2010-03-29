@@ -26,7 +26,9 @@ class LogsController < ApplicationController
 
     if @log.save
       flash[:notice] = 'Welcome to the OCT Help Desk!'
-      redirect_to root_url
+      respond_to do |format|
+        format.html { redirect_to root_url }
+      end
     else
       render :action => "index"
     end

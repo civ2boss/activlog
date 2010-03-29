@@ -22,7 +22,6 @@ $(function () {
   }, 30000);
   
   $("#signin form").validate({
-    debug: true,
     rules: {
       "log[name]": {required: true},
       "log[social_security]": {required: true, minlength: 4, maxlength: 4},

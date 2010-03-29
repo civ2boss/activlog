@@ -58,38 +58,7 @@
 
     <table id="recent_logs_by_time" class="log-report">
       <tbody>
-        <% @logs.each do |log| %>
-        <tr id="" class="log-entry">
-          <td class="time">
-            <%=h log.updated_at.strftime("%I:%S %p") %>
-          </td>
-          <td class="name">
-            <%=h log.name %>
-          </td>
-          <td class="type">
-            <%=h log.contact_type %>
-          </td>
-					<td class="category">
-						<%=h log.category %>
-					</td>
-          <td class="description">
-            <p><%=h log.description %></p>
-          </td>
-          <% if current_user %>
-          <td class="social-security">
-            <p><%=h log.social_security %></p>
-          </td>
-          <% end %>
-          <td class="table-options">
-            <div>
-            <% if current_user %>
-              <%= link_to 'Edit', edit_log_path(log) %>
-              <%= link_to 'Delete', log, :confirm => 'Are you sure?', :method => :delete %>
-            <% end %>
-            </div>
-          </td>
-        </tr>
-        <% end %>
+        <%= render :partial => "log_item", :collection => @logs %>
       </tbody>
     </table>
   </div>
