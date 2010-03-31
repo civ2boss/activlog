@@ -41,7 +41,7 @@ a:hover, a:active { background-color:#ff6e75; -moz-border-radius:5px; -webkit-bo
  
 #user_nav { background-color:rgba(255,255,255,0.3); -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; border-bottom-left-radius:5px; float:right; font-size:0.9em; padding:5px; }
   #user_nav a:link, #user_nav a:visited { color:#eed; }
-  #user_nav a:visited, #user_nav a:hover { background:none; color:#998; text-shadow:none; }
+  #user_nav a:hover, #user_nav a:active { background:none; color:#998; text-shadow:none; }
 
 #find_dates #help { float:left; margin-top:25px; text-shadow:1px 1px 1px #000; width:320px; }
 #find_dates form { border-left:1px solid #fff; float:left; margin:0 auto; padding:1em 10px; width:579px; }
@@ -73,7 +73,11 @@ width:930px;*/
   #signin form { overflow:hidden; }
   #signin form fieldset { float:left; }
   #signin form legend { display:none; }
-  #signin form p { float:left; }
+  #signin form p { float:left; position:relative; }
+  #signin form label.error { background:transparent url("../images/exclamation.png") no-repeat 0 0; bottom:7px; height:16px; overflow:hidden; position:absolute; right:5px; text-indent:-9999px; width:16px; }
+    #signin form .contact_type label.error { bottom:auto; left:6em; right:auto; top:3px; }
+    #signin form .category label.error { bottom:auto; right:35px; top:5px; }
+    #signin form label.error.:hover { background-position:0 3px; height:auto; padding-left:20px; text-indent:0; bottom:3px; width:auto; }
   #signin form input[type='text'],
   #signin form input[type='password'],
   #signin form textarea { background:#a00 url("../images/input-bg.gif") repeat-x top left; border:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; color:#fff; margin:0; padding:6px 10px 5px; }

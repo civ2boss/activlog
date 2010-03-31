@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20100330161525) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"
-    t.boolean  "serviced"
+    t.boolean  "serviced",        :default => false
   end
 
   create_table "users", :force => true do |t|

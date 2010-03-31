@@ -31,6 +31,18 @@ $(function () {
                             return $("select#log_category").val() == "Other";
                           }}
     }
-  })
+  });
+  
+  $("#signin form label.error").live('mouseover', function () {
+    $(this).attr('title', $(this).html());
+  });
+  
+  $("#log_serviced:checked").live('change', function () {
+    $(this).parents('tr').css('color', '#ccb');
+  });
+  
+  $("#log_serviced:unchecked").live('change', function () {
+    $(this).parents('tr').css('color', '#000');
+  });
   
 });

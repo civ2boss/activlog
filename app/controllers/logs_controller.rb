@@ -46,6 +46,19 @@ class LogsController < ApplicationController
       end
     end
   end
+  
+  def service
+    @log = Log.find(params[:id])
+    
+    respond_to do |format|
+      if @log.update_attributes(params[:log])
+        flash[:notice] = 'Log was successfully updated.'
+        format.html { redirect_to(@log) }
+      else
+        format.html { render :action => "edit" }
+      end
+    end
+  end
 
   def destroy
     @log = Log.find(params[:id])

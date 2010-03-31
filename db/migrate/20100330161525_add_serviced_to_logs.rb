@@ -1,6 +1,6 @@
 class AddServicedToLogs < ActiveRecord::Migration
   def self.up
-    add_column :logs, :serviced, :boolean
+    add_column :logs, :serviced, :boolean, :default => false
   end
 
   def self.down

@@ -1,15 +1,21 @@
 <tr id="" class="log-entry">
+	<td class="serviced">
+		<% form_for(@log) do |f| %>
+			<%= f.check_box :serviced %>
+		<% end %>
+		<%= link_to 'Service', :controller => "log", :action => :service, :id => log_item %>
+	</td>
   <td class="time">
-    <%=h log_item.updated_at.strftime("%I:%S %p") %>
+    <p><%=h log_item.updated_at.strftime("%I:%S %p") %></p>
   </td>
   <td class="name">
-    <%=h log_item.name %>
+    <p><%=h log_item.name %></p>
   </td>
   <td class="type">
-    <%=h log_item.contact_type %>
+    <p><%=h log_item.contact_type %></p>
   </td>
 	<td class="category">
-		<%=h log_item.category %>
+		<p><%=h log_item.category %></p>
 	</td>
   <td class="description">
     <p><%=h log_item.description %></p>
@@ -19,9 +25,6 @@
     <p><%=h log_item.social_security %></p>
   </td>
   <% end %>
-	<td class="serviced">
-		
-	</td>
   <td class="table-options">
     <div>
     <% if current_user %>
