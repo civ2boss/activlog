@@ -1,6 +1,6 @@
 <div id="logs">
   <div id="header">
-    <h1><span>Queens College</span></h1>
+    <h1><a href="./">Queens College</a></h1>
 
     <div id="wrapper">
       <div id="welcome">
@@ -57,6 +57,18 @@
     <h1>Recent Visitors</h1>
 
     <table id="recent_logs_by_time" class="log-report">
+			<thead>
+				<th class="service">Status</th>
+			  <th class="time">Time</th>
+			  <th class="name">Name</th>
+				<th class="type">Type</th>
+				<th class="category">Category</th>
+				<th class="description">Description</th>
+				<% if current_user %>
+				<th class="social-security">Social Security</th>
+				<th class="table-options">Options</th>
+				<% end %>
+			</thead>
       <tbody>
         <%= render :partial => "log_item", :collection => @logs %>
       </tbody>

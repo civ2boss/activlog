@@ -30,6 +30,7 @@ class Log < ActiveRecord::Base
     name
     social_security
     contact_type
+    category
     description
 
   end

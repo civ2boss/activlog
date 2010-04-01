@@ -1,6 +1,6 @@
 <div id="find_dates">
 	<div id="header">
-		<h1><span>Queens College</span></h1>
+		<h1><a href="./">Queens College</a></h1>
 		
 		<div id="wrapper">
 			<div id="help">
@@ -21,44 +21,24 @@
 	</div>
 </div>
 
-<h1><% @blank %></h1>
-
 <div id="recent_visitors">
-  <h1>Recent Visitors</h1>
+  <h1>Visitors between <%= @start_date %> &amp; <%= @end_date %></h1>
 	<div class="download_csv"><%= link_to 'Download CSV File', "/admin.csv?start_date=#{@start_date};end_date=#{@end_date}" %>
 <% end %></div>
-
+	
   <table id="recent_logs_by_time" class="log-report">
+		<thead>
+			<th class="service">Status</th>
+		  <th class="time">Time</th>
+		  <th class="name">Name</th>
+			<th class="type">Type</th>
+			<th class="category">Category</th>
+			<th class="description">Description</th>
+			<th class="social-security">Social Security</th>
+			<th class="table-options">Options</th>
+		</thead>
     <tbody>
-      <% @logs.each do |log| %>
-      <tr id="" class="log-entry">
-        <td class="time">
-          <%=h log.updated_at.strftime("%I:%S %p") %>
-        </td>
-        <td class="name">
-          <%=h log.name %>
-        </td>
-        <td class="type">
-          <%=h log.contact_type %>
-        </td>
-        <td class="description">
-          <p><%=h log.description %></p>
-        </td>
-        <% if current_user %>
-        <td class="social-security">
-          <p><%=h log.social_security %></p>
-        </td>
-        <% end %>
-        <td class="table-options">
-          <div>
-          <% if current_user %>
-            <%= link_to 'Edit', edit_log_path(log) %>
-            <%= link_to 'Delete', log, :confirm => 'Are you sure?', :method => :delete %>
-          <% end %>
-          </div>
-        </td>
-      </tr>
-      <% end %>
+      <%= render :partial => "log_item", :collection => @logs %>
     </tbody>
   </table>
 </div>

@@ -1,6 +1,7 @@
 class LogsController < ApplicationController
   load_and_authorize_resource
   before_filter :require_user, :only => [:edit, :update, :destroy, :admin]
+  helper LogsHelper
   
   def index
     @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
@@ -40,20 +41,7 @@ class LogsController < ApplicationController
     respond_to do |format|
       if @log.update_attributes(params[:log])
         flash[:notice] = 'Log was successfully updated.'
-        format.html { redirect_to(@log) }
-      else
-        format.html { render :action => "edit" }
-      end
-    end
-  end
-  
-  def service
-    @log = Log.find(params[:id])
-    
-    respond_to do |format|
-      if @log.update_attributes(params[:log])
-        flash[:notice] = 'Log was successfully updated.'
-        format.html { redirect_to(@log) }
+        format.html { redirect_to root_url }
       else
         format.html { render :action => "edit" }
       end

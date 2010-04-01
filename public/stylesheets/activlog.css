@@ -65,7 +65,7 @@ width:930px;*/
 
 #header { background-color:#d40015; color:#fff; margin-bottom:1em; }
 #header h1 { background-color:#fff; }
-#header h1 span { background: url("../images/qclogo.png") no-repeat 0 0; display:block; height:94px; margin:0 auto; padding-bottom:0.5em; text-indent:-9999px; width:930px; }
+#header h1 a { background: url("../images/qclogo.png") no-repeat 0 0; display:block; height:94px; margin:0 auto; padding-bottom:0.5em; text-indent:-9999px; width:930px; }
 #wrapper { margin:0 auto; overflow:hidden; padding:1em 0 2em; position:relative; width:930px; }
 #welcome { border-right:1px solid #fff; float:left; margin-top:25px; text-shadow:1px 1px 1px #000; width:319px; }
   #welcome em { background-color:#ff6e75; color:#fff; font-style:normal; padding:3px; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
@@ -96,8 +96,12 @@ width:930px;*/
 #recent_visitors { margin:0 auto; width:930px; }
 #recent_visitors h1 { color:#333; float:left; padding-right:10px; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #recent_visitors .download_csv { line-height:2em; padding:8px; }
-#recent_visitors table.log-report { clear:both; }
-#recent_visitors table td { border-bottom:1px solid #eee; vertical-align:top; line-height:20px; padding:7px 5px; }
+#recent_visitors table { border-collapse:collapse; clear:both; width:930px; }
+#recent_visitors table th { background-color:#d40015; color:#fff; padding:0.4em; text-align:left; text-shadow:1px 1px 1px #000; }
+#recent_visitors table tr.serviced { color:#ccb; }
+#recent_visitors table td { padding:0.5em 1em; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
+  #recent_visitors table td a:link { text-shadow:none; }
+#recent_visitors table tr:nth-child(even) td { background-color:rgba(0,0,0,0.2); text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #recent_visitors table td.description p { color:#665; float:left; margin:0 0 0 5px; font-size:0.75em; }
 #recent_visitors table td.table-options div { visibility:hidden; }
 #recent_visitors table tr:hover td.table-options div { visibility:visible; }

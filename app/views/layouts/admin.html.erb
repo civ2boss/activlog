@@ -21,15 +21,23 @@
 		$(function() {
 			$("<div id=\"start_date\"></div>").appendTo($('form p#start'));
 			$('#start_date').datepicker({
-				altField: '#find_dates_start_date_1i', altFormat: 'yyyy',
-				altField: '#find_dates_start_date_2i', altFormat: 'm',
-				altField: '#find_dates_start_date_3i', altFormat: 'd'
+				altField: "#find_dates_start_date_3i", altFormat: 'd',
+				onChangeMonthYear: function (year, month, inst) {
+					$('#find_dates_start_date_2i option').attr('selected', false);
+					$("#find_dates_start_date_2i option[value='" + month + "']").attr('selected', 'selected');
+					$('#find_dates_start_date_1i option').attr('selected', false);
+					$("#find_dates_start_date_1i option[value='" + year + "']").attr('selected', 'selected');
+				}
 			});
 			$("<div id=\"end_date\"></div>").appendTo($('form p#end'));
 			$('#end_date').datepicker({
-				altField: '#find_dates_end_date_1i', altFormat: 'yyyy',
-				altField: '#find_dates_end_date_2i', altFormat: 'm',
-				altField: '#find_dates_end_date_3i', altFormat: 'd'
+				altField: '#find_dates_end_date_3i', altFormat: 'd',
+				onChangeMonthYear: function (year, month, inst) {
+					$('#find_dates_end_date_2i option').attr('selected', false);
+					$("#find_dates_end_date_2i option[value='" + month + "']").attr('selected', 'selected');
+					$('#find_dates_end_date_1i option').attr('selected', false);
+					$("#find_dates_end_date_1i option[value='" + year + "']").attr('selected', 'selected');
+				}
 			});
 		});
 	</script>
@@ -45,10 +53,11 @@
 	<div id="user_nav">
 	<% if controller.action_name != 'new' %>
 		<% if current_user %>
+			<%= link_to "Admin", admin_path %>
 			<%= link_to "Edit profile", edit_user_path(:current) %>
 			<%= link_to "Logout", logout_path %>
 		<% else %>
-			<%= link_to "Log in", login_path %>
+			<%= link_to "Admin Log in", login_path %>
 		<% end %>
 	<% end %>
 	</div>
