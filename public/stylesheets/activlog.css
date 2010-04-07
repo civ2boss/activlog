@@ -63,12 +63,12 @@ padding:1em;
 width:930px;*/
 }
 
-#header { background-color:#d40015; color:#fff; margin-bottom:1em; }
+#header { background-color:#333; color:#fff; margin-bottom:1em; }
 #header h1 { background-color:#fff; }
 #header h1 a { background: url("../images/qclogo.png") no-repeat 0 0; display:block; height:94px; margin:0 auto; padding-bottom:0.5em; text-indent:-9999px; width:930px; }
 #wrapper { margin:0 auto; overflow:hidden; padding:1em 0 2em; position:relative; width:930px; }
 #welcome { border-right:1px solid #fff; float:left; margin-top:25px; text-shadow:1px 1px 1px #000; width:319px; }
-  #welcome em { background-color:#ff6e75; color:#fff; font-style:normal; padding:3px; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
+  #welcome em { background-color:#888; color:#fff; font-style:normal; padding:3px; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #signin { float:left; padding:0 10px; text-shadow:1px 1px 1px #000; width:580px; }
   #signin form { overflow:hidden; }
   #signin form fieldset { float:left; }
@@ -80,7 +80,7 @@ width:930px;*/
     #signin form label.error.:hover { background-position:0 3px; height:auto; padding-left:20px; text-indent:0; bottom:3px; width:auto; }
   #signin form input[type='text'],
   #signin form input[type='password'],
-  #signin form textarea { background:#a00 url("../images/input-bg.gif") repeat-x top left; border:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; color:#fff; margin:0; padding:6px 10px 5px; }
+  #signin form textarea { background:#fff url("../images/input-bg..gif") repeat-x top left; border:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; color:#fff; margin:0; padding:6px 10px 5px; }
   #signin form input .name { float:left; }
   #signin form input#log_name { height:20px; width:200px; }
   #signin form .social_security { clear:left; float:left; }
@@ -97,7 +97,7 @@ width:930px;*/
 #recent_visitors h1 { color:#333; float:left; padding-right:10px; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #recent_visitors .download_csv { line-height:2em; padding:8px; }
 #recent_visitors table { border-collapse:collapse; clear:both; width:930px; }
-#recent_visitors table th { background-color:#d40015; color:#fff; padding:0.4em; text-align:left; text-shadow:1px 1px 1px #000; }
+#recent_visitors table th { background-color:#333; color:#fff; padding:0.4em; text-align:left; text-shadow:1px 1px 1px #000; }
 #recent_visitors table tr.serviced { color:#ccb; }
 #recent_visitors table td { padding:0.5em 1em; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
   #recent_visitors table td a:link { text-shadow:none; }
