@@ -80,7 +80,7 @@ width:930px;*/
     #signin form label.error.:hover { background-position:0 3px; height:auto; padding-left:20px; text-indent:0; bottom:3px; width:auto; }
   #signin form input[type='text'],
   #signin form input[type='password'],
-  #signin form textarea { background:#fff url("../images/input-bg..gif") repeat-x top left; border:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; color:#fff; margin:0; padding:6px 10px 5px; }
+  #signin form textarea { background:#fff url("../images/input-bg..gif") repeat-x top left; border:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; color:#000; margin:0; padding:6px 10px 5px; }
   #signin form input .name { float:left; }
   #signin form input#log_name { height:20px; width:200px; }
   #signin form .social_security { clear:left; float:left; }
