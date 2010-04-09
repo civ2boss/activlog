@@ -64,10 +64,6 @@
 				<th class="type">Type</th>
 				<th class="category">Category</th>
 				<th class="description">Description</th>
-				<% if current_user %>
-				<th class="social-security">Social Security</th>
-				<th class="table-options">Options</th>
-				<% end %>
 			</thead>
       <tbody>
         <%= render :partial => "log_item", :collection => @logs %>

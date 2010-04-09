@@ -20,15 +20,4 @@
   <td class="description">
     <p><%=h log_item.description %></p>
   </td>
-  <% if current_user %>
-  <td class="social-security">
-    <p><%=h log_item.social_security %></p>
-  </td>
-  <td class="table-options">
-    <div>
-      <%= link_to 'Edit', edit_log_path(log_item) %>
-      <%= link_to 'Delete', log_item, :confirm => 'Are you sure?', :method => :delete %>
-    </div>
-  </td>
-	<% end %>
 </tr>
