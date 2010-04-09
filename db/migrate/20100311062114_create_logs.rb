@@ -4,7 +4,7 @@ class CreateLogs < ActiveRecord::Migration
       t.string :name
       t.string :contact_type
       t.text :description
-      t.integer :social_security
+      t.string :social_security
 
       t.timestamps
     end

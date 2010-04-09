@@ -18,7 +18,7 @@ class Log < ActiveRecord::Base
   validates_presence_of :name, :contact_type, :social_security
   validates_inclusion_of :contact_type, :in => CONTACT_TYPES.map {|disp, value| value}
   validates_inclusion_of :category, :in => CATEGORIES.map {|disp, value| value}
-  validates_format_of :social_security, :with => /\A[0-9]{4}\Z/i
+  validates_format_of :social_security, :with => /\A\d{4}\z/, :message => 'must be the last four digits of your social security number'
   validate :social_security_must_be_four_digits
   
   # ===============
@@ -33,11 +33,6 @@ class Log < ActiveRecord::Base
     category
     description
 
-  end
-  
-protected
-  def social_security_must_be_four_digits
-    errors.add(:social_security, 'must be the last four digits of your social security number') if social_security.nil? || social_security < 1000
   end
   
 end
