@@ -19,7 +19,6 @@ class Log < ActiveRecord::Base
   validates_inclusion_of :contact_type, :in => CONTACT_TYPES.map {|disp, value| value}
   validates_inclusion_of :category, :in => CATEGORIES.map {|disp, value| value}
   validates_format_of :social_security, :with => /\A\d{4}\z/, :message => 'must be the last four digits of your social security number'
-  validate :social_security_must_be_four_digits
   
   # ===============
   # = CSV support =
