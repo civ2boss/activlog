@@ -36,5 +36,26 @@ $(function () {
   $("#signin form label.error").live('mouseover', function () {
     $(this).attr('title', $(this).html());
   });
+
+  $("<div id=\"start_date\"></div>").appendTo($('form p#start'));
+	$('#start_date').datepicker({
+		altField: "#find_dates_start_date_3i", altFormat: 'd',
+		onChangeMonthYear: function (year, month, inst) {
+			$('#find_dates_start_date_2i option').attr('selected', false);
+			$("#find_dates_start_date_2i option[value='" + month + "']").attr('selected', 'selected');
+			$('#find_dates_start_date_1i option').attr('selected', false);
+			$("#find_dates_start_date_1i option[value='" + year + "']").attr('selected', 'selected');
+		}
+	});
+	$("<div id=\"end_date\"></div>").appendTo($('form p#end'));
+	$('#end_date').datepicker({
+		altField: '#find_dates_end_date_3i', altFormat: 'd',
+		onChangeMonthYear: function (year, month, inst) {
+			$('#find_dates_end_date_2i option').attr('selected', false);
+			$("#find_dates_end_date_2i option[value='" + month + "']").attr('selected', 'selected');
+			$('#find_dates_end_date_1i option').attr('selected', false);
+			$("#find_dates_end_date_1i option[value='" + year + "']").attr('selected', 'selected');
+		}
+	});
   
 });

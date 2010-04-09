@@ -63,7 +63,7 @@ padding:1em;
 width:930px;*/
 }
 
-#header { background-color:#333; color:#fff; margin-bottom:1em; }
+#header { background-color:#666; color:#fff; margin-bottom:1em; }
 #header h1 { background-color:#fff; }
 #header h1 a { background: url("../images/qclogo.png") no-repeat 0 0; display:block; height:94px; margin:0 auto; padding-bottom:0.5em; text-indent:-9999px; width:930px; }
 #wrapper { margin:0 auto; overflow:hidden; padding:1em 0 2em; position:relative; width:930px; }
@@ -74,13 +74,14 @@ width:930px;*/
   #signin form fieldset { float:left; }
   #signin form legend { display:none; }
   #signin form p { float:left; position:relative; }
+  #signin form label { font-size:0.85em; }
   #signin form label.error { background:transparent url("../images/exclamation.png") no-repeat 0 0; bottom:7px; height:16px; overflow:hidden; position:absolute; right:5px; text-indent:-9999px; width:16px; }
     #signin form .contact_type label.error { bottom:auto; left:6em; right:auto; top:3px; }
     #signin form .category label.error { bottom:auto; right:35px; top:5px; }
     #signin form label.error.:hover { background-position:0 3px; height:auto; padding-left:20px; text-indent:0; bottom:3px; width:auto; }
   #signin form input[type='text'],
   #signin form input[type='password'],
-  #signin form textarea { background:#fff url("../images/input-bg..gif") repeat-x top left; border:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; color:#000; margin:0; padding:6px 10px 5px; }
+  #signin form textarea { background:#fff url("../images/input-bg2.gif") repeat-x top left; border:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; color:#000; margin:0; padding:6px 10px 5px; }
   #signin form input .name { float:left; }
   #signin form input#log_name { height:20px; width:200px; }
   #signin form .social_security { clear:left; float:left; }
@@ -97,7 +98,7 @@ width:930px;*/
 #recent_visitors h1 { color:#333; float:left; padding-right:10px; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #recent_visitors .download_csv { line-height:2em; padding:8px; }
 #recent_visitors table { border-collapse:collapse; clear:both; width:930px; }
-#recent_visitors table th { background-color:#333; color:#fff; padding:0.4em; text-align:left; text-shadow:1px 1px 1px #000; }
+#recent_visitors table th { background-color:#666; color:#fff; padding:0.4em; text-align:left; text-shadow:1px 1px 1px #000; }
 #recent_visitors table tr.serviced { color:#ccb; }
 #recent_visitors table td { padding:0.5em 1em; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
   #recent_visitors table td a:link { text-shadow:none; }

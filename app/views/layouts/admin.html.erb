@@ -17,30 +17,6 @@
 	</script>
 	<% end %>
 	<%= javascript_include_tag 'application', 'jquery-ui-1.8.custom.min', 'live_validation' %>
-	<script type="text/javascript">
-		$(function() {
-			$("<div id=\"start_date\"></div>").appendTo($('form p#start'));
-			$('#start_date').datepicker({
-				altField: "#find_dates_start_date_3i", altFormat: 'd',
-				onChangeMonthYear: function (year, month, inst) {
-					$('#find_dates_start_date_2i option').attr('selected', false);
-					$("#find_dates_start_date_2i option[value='" + month + "']").attr('selected', 'selected');
-					$('#find_dates_start_date_1i option').attr('selected', false);
-					$("#find_dates_start_date_1i option[value='" + year + "']").attr('selected', 'selected');
-				}
-			});
-			$("<div id=\"end_date\"></div>").appendTo($('form p#end'));
-			$('#end_date').datepicker({
-				altField: '#find_dates_end_date_3i', altFormat: 'd',
-				onChangeMonthYear: function (year, month, inst) {
-					$('#find_dates_end_date_2i option').attr('selected', false);
-					$("#find_dates_end_date_2i option[value='" + month + "']").attr('selected', 'selected');
-					$('#find_dates_end_date_1i option').attr('selected', false);
-					$("#find_dates_end_date_1i option[value='" + year + "']").attr('selected', 'selected');
-				}
-			});
-		});
-	</script>
 </head>
 <body>
 
