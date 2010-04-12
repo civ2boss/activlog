@@ -4,7 +4,7 @@ class LogsController < ApplicationController
   helper LogsHelper
   
   def index
-    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
+    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "created_at DESC")
     @log = Log.new
     
     respond_to do |format|
@@ -23,7 +23,7 @@ class LogsController < ApplicationController
 
   def create
     @log = Log.new(params[:log])
-    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "updated_at DESC")
+    @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "created_at DESC")
 
     if @log.save
       flash[:notice] = 'Welcome to the OCT Help Desk!'
@@ -71,7 +71,7 @@ class LogsController < ApplicationController
       end
     end
 
-    @logs = Log.all(:conditions => ["updated_at between ? and ?", @start_date, @end_date], :order => "updated_at DESC")
+    @logs = Log.all(:conditions => ["updated_at between ? and ?", @start_date, @end_date], :order => "created_at DESC")
 
     respond_to do |format|
       format.html { render :action => 'admin', :layout => 'admin' }
