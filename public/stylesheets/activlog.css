@@ -100,9 +100,9 @@ width:930px;*/
 #recent_visitors table { border-collapse:collapse; clear:both; width:930px; }
 #recent_visitors table th { background-color:#666; color:#fff; padding:0.4em; text-align:left; text-shadow:1px 1px 1px #000; }
 #recent_visitors table tr.serviced { color:#ccb; }
-#recent_visitors table td { padding:0.5em 1em; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
+#recent_visitors table td { font-size:0.75em; padding:0.5em 1em; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
   #recent_visitors table td a:link { text-shadow:none; }
 #recent_visitors table tr:nth-child(even) td { background-color:rgba(0,0,0,0.2); text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
-#recent_visitors table td.description p { color:#665; float:left; margin:0 0 0 5px; font-size:0.75em; }
+#recent_visitors table td.description p { color:#665; float:left; margin:0 0 0 5px; }
 #recent_visitors table td.table-options div { visibility:hidden; }
 #recent_visitors table tr:hover td.table-options div { visibility:visible; }
