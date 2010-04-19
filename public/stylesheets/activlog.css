@@ -15,16 +15,22 @@ a:hover, a:active { background-color:#ff6e75; -moz-border-radius:5px; -webkit-bo
 #logs .errorExplanation p { float:none; }
 
 #login,
+#edit_profile,
 #register { background-color:#d40015; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; margin:100px auto 0; padding:10px; width:300px; }
 #login h1,
+#edit_profile h1,
 #register h1 { color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #login label,
+#edit_profile label,
 #register label { color:#fff; text-shadow:1px 1px 1px rgba(0,0,0,0.5); }
 #login input[type='text'],
 #login input[type='password'],
+#edit_profile input[type='text'],
+#edit_profile input[type='password'],
 #register input[type='text'],
 #register input[type='password'] { background:#a00 url("../images/input-bg.gif") repeat-x top left; border:1px solid #e00000; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; border-width:0 1px 1px 0; color:#fff; margin:0; padding:6px 10px 5px; width:280px; }
-#register small { color:#fff; font-size:0.75em; }
+#register small,
+#edit_profile small { color:#fff; font-size:0.75em; }
 #login .register_link { text-align:right; }
 #login .register_link a:link,
 #login .register_link a:visited { color:#eed; }
@@ -39,7 +45,7 @@ a:hover, a:active { background-color:#ff6e75; -moz-border-radius:5px; -webkit-bo
 #login ol li label,
 #register ol li label { display:block; float:left; width:185px; }
  
-#user_nav { background-color:rgba(255,255,255,0.3); -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; border-bottom-left-radius:5px; float:right; font-size:0.9em; padding:5px; }
+#user_nav { background-color:rgba(255,255,255,0.3); -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; border-bottom-left-radius:5px; font-size:0.9em; padding:5px; position:absolute; right:0; top:0; }
   #user_nav a:link, #user_nav a:visited { color:#eed; }
   #user_nav a:hover, #user_nav a:active { background:none; color:#998; text-shadow:none; }
 

@@ -27,7 +27,7 @@
 
 <div id="page">
 	<div id="user_nav">
-	<% if controller.action_name != 'new' %>
+	<% if controller.action_name != 'new' || 'edit' %>
 		<% if current_user %>
 			<%= link_to "Admin", admin_path %>
 			<%= link_to "Edit profile", edit_user_path(:current) %>
