@@ -17,6 +17,10 @@
               <%= f.label :name %><br />
               <%= f.text_field :name, :class => 'required' %>
             </p>
+            <p class="email">
+              <%= f.label :email %><br />
+              <%= f.text_field :email, :class => 'required' %>
+            </p>
             <p class="social_security">
               <%= f.label "Last 4 digits of Social Security" %><br />
               <%= f.password_field :social_security, :maxlength => 4, :size => 4, :class => 'required' %>
@@ -33,13 +37,13 @@
           </fieldset>
           <fieldset>
             <legend>Problem</legend>
-						<p class="category">
-							<%= f.label :category, "I need help with&hellip;" %>
-							<%= f.select	:category,
-							 								Log::CATEGORIES,
-															:prompt => "Select one"
-							%>
-						</p>
+            <p class="category">
+            <%= f.label :category, "I need help with&hellip;" %>
+            <%= f.select	:category,
+                          Log::CATEGORIES,
+                          :prompt => "Select one"
+            %>
+            </p>
             <p class="description">
               <%= f.label :description %><br />
               <%= f.text_area :description, :class => 'required' %>
@@ -57,14 +61,15 @@
     <h1>Recent Visitors</h1>
 
     <table id="recent_logs_by_time" class="log-report">
-			<thead>
-				<th class="service">Status</th>
-			  <th class="time">Time</th>
-			  <th class="name">Name</th>
-				<th class="type">Type</th>
-				<th class="category">Category</th>
-				<th class="description">Description</th>
-			</thead>
+      <thead>
+        <th class="service">Status</th>
+        <th class="time">Time</th>
+        <th class="name">Name</th>
+        <th class="email">Email</th>
+        <th class="type">Type</th>
+        <th class="category">Category</th>
+        <th class="description">Description</th>
+      </thead>
       <tbody>
         <%= render :partial => "log_item", :collection => @logs %>
       </tbody>

@@ -1,21 +1,21 @@
 <% form_for @user do |form| %>
-	<%= form.error_messages %>
-	<ol class="formList">
-		<li>
-			<%= form.label :username, "Username" %>
-			<%= form.text_field :username %>
-		</li>
-		<li>
-			<%= form.label :password, "Passphrase" %>
-			<%= form.password_field :password %>
-			<small>Enter in a short sentence you can remember as your passphrase.</small>
-		</li>
-		<li>
-			<%= form.label :password_confirmation, "Passphrase confirmation" %>
-			<%= form.password_field :password_confirmation %>
-		</li>
-		<li>
-			<%= form.submit "Submit" %>
-		</li>
-	</ol>
+  <%= form.error_messages %>
+  <ol class="formList">
+    <li>
+      <%= form.label :username, "Username" %>
+      <%= form.text_field :username %>
+    </li>
+    <li>
+      <%= form.label :password, "Passphrase" %>
+      <%= form.password_field :password %>
+      <small>Enter in a short sentence you can remember as your passphrase.</small>
+    </li>
+    <li>
+      <%= form.label :password_confirmation, "Passphrase confirmation" %>
+      <%= form.password_field :password_confirmation %>
+    </li>
+    <li>
+      <%= form.submit "Submit" %>
+    </li>
+  </ol>
 <% end %>

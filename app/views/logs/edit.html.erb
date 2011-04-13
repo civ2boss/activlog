@@ -8,6 +8,10 @@
     <%= f.text_field :name %>
   </p>
   <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
     <%= f.label :contact_type %><br />
     <%= f.select :contact_type,
                   Log::CONTACT_TYPES,
@@ -22,9 +26,9 @@
     <%= f.label :social_security %><br />
     <%= f.text_field :social_security, :maxlength => 4, :size => 4 %>
   </p>
-	<p>
-		<label><%= f.check_box :serviced %> User serviced</label>
-	</p>
+  <p>
+    <label><%= f.check_box :serviced %> User serviced</label>
+  </p>
   <p>
     <%= f.submit 'Update' %>
   </p>

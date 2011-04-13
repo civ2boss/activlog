@@ -1,42 +1,43 @@
 <div id="find_dates">
-	<div id="header">
-		<h1><a href="./">Queens College</a></h1>
-		
-		<div id="wrapper">
-			<div id="help">
-				<p>Select the date range you want to view. The end date should be the day you want plus one. Export this view by using the download link.</p>
-			</div>
-
-			<% form_tag '/admin' do %>
-				<p id="start">
-					<%= label_tag "start_date", "Start Date" %>
-					<%= date_select "find_dates", "start_date", :order => [:month, :day, :year] %>
-				</p>
-				<p id="end">
-					<%= label_tag "end_date", "End Date" %>
-					<%= date_select "find_dates", "end_date", :order => [:month, :day, :year] %>
-				</p>
-				<%= submit_tag "Find", :id => 'find_btn' %>
-		</div>
-	</div>
+  <div id="header">
+    <h1><a href="./">Queens College</a></h1>
+    
+    <div id="wrapper">
+      <div id="help">
+        <p>Select the date range you want to view. The end date should be the day you want plus one. Export this view by using the download link.</p>
+      </div>
+      
+      <% form_tag '/admin' do %>
+        <p id="start">
+          <%= label_tag "start_date", "Start Date" %>
+          <%= date_select "find_dates", "start_date", :order => [:month, :day, :year] %>
+        </p>
+        <p id="end">
+          <%= label_tag "end_date", "End Date" %>
+          <%= date_select "find_dates", "end_date", :order => [:month, :day, :year] %>
+        </p>
+        <%= submit_tag "Find", :id => 'find_btn' %>
+    </div>
+  </div>
 </div>
 
 <div id="recent_visitors">
   <h1>Visitors between <%= @start_date %> &amp; <%= @end_date %></h1>
-	<div class="download_csv"><%= link_to 'Download CSV File', "/admin.csv?start_date=#{@start_date};end_date=#{@end_date}" %>
+  <div class="download_csv"><%= link_to 'Download CSV File', "/admin.csv?start_date=#{@start_date};end_date=#{@end_date}" %>
 <% end %></div>
-	
+  
   <table id="recent_logs_by_time" class="log-report">
-		<thead>
-			<th class="service">Status</th>
-		  <th class="time">Time</th>
-		  <th class="name">Name</th>
-			<th class="type">Type</th>
-			<th class="category">Category</th>
-			<th class="description">Description</th>
-			<th class="social-security">Social Security</th>
-			<th class="table-options">Options</th>
-		</thead>
+    <thead>
+      <th class="service">Status</th>
+      <th class="time">Time</th>
+      <th class="name">Name</th>
+      <th class="email">Email</th>
+      <th class="type">Type</th>
+      <th class="category">Category</th>
+      <th class="description">Description</th>
+      <th class="social-security">Social Security</th>
+      <th class="table-options">Options</th>
+    </thead>
     <tbody>
       <%= render :partial => "log_item_admin", :collection => @logs %>
     </tbody>

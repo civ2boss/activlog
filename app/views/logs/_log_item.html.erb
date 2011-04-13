@@ -1,22 +1,25 @@
 <tr id="" class="log-entry <%= log_serviced(log_item) %>">
-	<td class="status">
-		<% form_for(log_item) do |f| %>
-			<%= f.check_box :serviced %>
-			<%= f.submit 'Update' %>
-		<% end %>
-	</td>
+  <td class="status">
+    <% form_for(log_item) do |f| %>
+      <%= f.check_box :serviced %>
+      <%= f.submit 'Update' %>
+    <% end %>
+  </td>
   <td class="time">
     <p><%=h log_item.created_at.strftime("%I:%M:%S %p") %></p>
   </td>
   <td class="name">
     <p><%=h log_item.name %></p>
   </td>
+  <td class="email">
+    <p><%=h log_item.email %></p>
+  </td>
   <td class="type">
     <p><%=h log_item.contact_type %></p>
   </td>
-	<td class="category">
-		<p><%=h log_item.category %></p>
-	</td>
+  <td class="category">
+    <p><%=h log_item.category %></p>
+  </td>
   <td class="description">
     <p><%=h log_item.description %></p>
   </td>

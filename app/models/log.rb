@@ -27,6 +27,7 @@ class Log < ActiveRecord::Base
 
     updated_at "Time"
     name
+    email
     social_security
     contact_type
     category
