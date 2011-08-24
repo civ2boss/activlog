@@ -32,6 +32,7 @@ class Log < ActiveRecord::Base
     contact_type
     category
     description
+    ip "IP"
 
   end
   

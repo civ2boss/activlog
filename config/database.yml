@@ -19,5 +19,4 @@ production:
   adapter: mysql
   database: activlog_production
   username: root
-  password: 
-  socket: /var/mysql/mysql.sock
+  password: tcr0b1n!

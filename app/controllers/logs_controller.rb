@@ -1,4 +1,6 @@
 class LogsController < ApplicationController
+  require 'socket'
+  
   load_and_authorize_resource
   before_filter :require_user, :only => [:edit, :update, :destroy, :admin]
   helper LogsHelper
@@ -23,6 +25,8 @@ class LogsController < ApplicationController
 
   def create
     @log = Log.new(params[:log])
+    # Not sure if the following should be local_ip or request.remote_ip
+    @log.ip = local_ip
     @logs = Log.all(:conditions => ["updated_at between ? and ?", Date.today, Date.today+1], :order => "created_at DESC")
 
     if @log.save
@@ -85,4 +89,16 @@ class LogsController < ApplicationController
                   params[object][attribute + '(2i)'].to_i, 
                   params[object][attribute + '(3i)'].to_i)
     end
+    
+    def local_ip
+      orig, Socket.do_not_reverse_lookup = Socket.do_not_reverse_lookup, true  # turn off reverse DNS resolution temporarily
+
+      UDPSocket.open do |s|
+        s.connect '64.233.187.99', 1
+        s.addr.last
+      end
+    ensure
+      Socket.do_not_reverse_lookup = orig
+    end
+    
 end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110413193521) do
+ActiveRecord::Schema.define(:version => 20110824154233) do
 
   create_table "logs", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20110413193521) do
     t.string   "category"
     t.boolean  "serviced",        :default => false
     t.string   "email"
+    t.string   "ip"
   end
 
   create_table "users", :force => true do |t|
